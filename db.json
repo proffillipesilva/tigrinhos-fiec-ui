@@ -1,0 +1,6 @@
+{
+    "games": [
+        { "id": "1", "title": "Jogo 21", "bonus": 100 },
+        { "id": "2", "title": "Poker", "bonus": 200 }
+      ]
+}
