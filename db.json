@@ -1,6 +1,6 @@
 {
     "games": [
-        { "id": "1", "title": "Jogo 21", "bonus": 100 },
-        { "id": "2", "title": "Poker", "bonus": 200 }
+        { "id": "1", "title": "Jogo 21", "bonus": 100, "image": "https://cdn.dribbble.com/userupload/9472685/file/original-e7ddbedfb40880879ed0bc31ad9cccf2.jpg?resize=400x300" },
+        { "id": "2", "title": "Poker", "bonus": 200, "image": "https://static.vecteezy.com/system/resources/previews/003/126/240/original/poker-game-logo-on-a-green-background-card-game-casino-game-free-vector.jpg" }
       ]
 }

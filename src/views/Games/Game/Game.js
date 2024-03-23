@@ -1,15 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {useParams, useSearchParams, useLocation} from 'react-router-dom'
+import axiosInstance from '../../../utils/axios'
+import GameService from '../../../services/GameService'
+
+import { Image, Container, Table, Row, Col } from 'react-bootstrap'
 
 function Game(props) {
   const params = useParams()
   const [game, setgame] = React.useState(null)
 
   React.useEffect(() => {
-    fetch('http://localhost:38000/games/' + params.id)
-    .then(res => res.json())
-    .then(game => setgame(game))
+    GameService.getGameById(params.id)
+    .then(gameById => setgame(gameById))
     
   }, [])
 
@@ -17,11 +20,36 @@ function Game(props) {
   //let searchParams = new URLSearchParams(useLocation().search).get('aluno');
   return (
     <div>
-        {game && <div>
-                <h2>{game.title}</h2>
-                <br />
-                <p> Premiação de {game.bonus}</p>
-            </div>}    
+        {game && <Container>
+              <Row>
+                <Col md={6} xs={12}>
+          <Image height={"300px"} src={game.image} roundedCircle  />
+          </Col>
+          <Col md={6} xs={12}>
+          <br />
+          <Table striped bordered hover>
+      <thead>
+        <tr>
+          
+          <th>Caracteristica</th>
+          <th>Valores</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+          <td>Title</td>
+          <td>{game.title}</td>
+        </tr>
+        <tr>
+          <td>Bonus</td>
+          <td>{game.bonus}</td>
+        </tr>
+        </tbody>
+        </Table>
+        </Col>
+        </Row>
+            </Container>}    
      </div>
     
   )
