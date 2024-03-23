@@ -5,17 +5,15 @@ import Games from "./views/Games/Games";
 import Game from "./views/Games/Game/Game";
 
 import { Link } from 'react-router-dom'
+import AppHeader from "./components/AppHeader";
+import { App } from 'konsta/react';
 
 function Main() {
 
   return (
     <>
-   <header>
-    <ul>
-      <li><Link to={"login"}>Login</Link></li>
-      <li><Link to={"games"}>Games</Link></li>
-    </ul>
-   </header>
+    <App theme="material">
+   <AppHeader />
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/games" element={<Games />} />
@@ -23,6 +21,7 @@ function Main() {
         <Route path="*" element={<Login />} />
       </Routes>
       
+    </App>
     </>
   );
 }

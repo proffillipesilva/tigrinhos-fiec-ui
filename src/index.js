@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Main from './Main';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './index.css'
 import Login from './views/Login/Login';
 import Games from './views/Games/Games';
