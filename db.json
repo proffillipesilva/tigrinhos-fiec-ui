@@ -1,6 +1,22 @@
 {
-    "games": [
-        { "id": "1", "title": "Jogo 21", "bonus": 100, "image": "https://cdn.dribbble.com/userupload/9472685/file/original-e7ddbedfb40880879ed0bc31ad9cccf2.jpg?resize=400x300" },
-        { "id": "2", "title": "Poker", "bonus": 200, "image": "https://static.vecteezy.com/system/resources/previews/003/126/240/original/poker-game-logo-on-a-green-background-card-game-casino-game-free-vector.jpg" }
-      ]
+  "games": [
+    {
+      "title": "Jogo 21",
+      "bonus": "250",
+      "image": "https://cdn.dribbble.com/userupload/9472685/file/original-e7ddbedfb40880879ed0bc31ad9cccf2.jpg?resize=400x300",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "title": "Poker",
+      "bonus": 200,
+      "image": "https://static.vecteezy.com/system/resources/previews/003/126/240/original/poker-game-logo-on-a-green-background-card-game-casino-game-free-vector.jpg"
+    },
+    {
+      "id": "dde2",
+      "title": "kiko",
+      "bonus": "1234",
+      "image": "https://clube-static.clubegazetadopovo.com.br/portal/wp-content/uploads/2020/04/materiasrepositorio-1522161414.jpeg"
+    }
+  ]
 }

@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {useParams, useSearchParams, useLocation} from 'react-router-dom'
+import {useParams, useSearchParams, useLocation, Link} from 'react-router-dom'
 import axiosInstance from '../../../utils/axios'
 import GameService from '../../../services/GameService'
 
-import { Image, Container, Table, Row, Col } from 'react-bootstrap'
+import { Image, Container, Table, Row, Col, Button } from 'react-bootstrap'
 
 function Game(props) {
   const params = useParams()
@@ -31,8 +31,8 @@ function Game(props) {
       <thead>
         <tr>
           
-          <th>Caracteristica</th>
-          <th>Valores</th>
+          <th>Features</th>
+          <th>Values</th>
           
         </tr>
       </thead>
@@ -49,6 +49,9 @@ function Game(props) {
         </Table>
         </Col>
         </Row>
+            <Row>
+              <Link to={"/manage/" + game.id}>Edit Game</Link>
+            </Row>
             </Container>}    
      </div>
     

@@ -13,7 +13,7 @@ function Games(props) {
     GameService.getAllGames()
       .then(allGames => setgames(allGames))
     //.then(setgames)
-  })
+  },[])
 
   return (
     <div>
@@ -25,7 +25,8 @@ function Games(props) {
             <GameCard
               title={game.title}
               image={game.image}
-              idx={idx}
+              idx={game.id}
+              key={idx}
 
             />
             </Col>
