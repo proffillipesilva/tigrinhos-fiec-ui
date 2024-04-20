@@ -5,10 +5,15 @@ import axiosInstance from '../../../utils/axios'
 import GameService from '../../../services/GameService'
 
 import { Image, Container, Table, Row, Col, Button } from 'react-bootstrap'
+import MyBackdrop from '../../../components/MyBackdrop'
 
 function Game(props) {
   const params = useParams()
   const [game, setgame] = React.useState(null)
+
+  const [loading, setLoading] = React.useState(false);
+  const [ok, setOk] = React.useState(false);
+  const [showFeed, setShowFeed] = React.useState(false);
 
   React.useEffect(() => {
     GameService.getGameById(params.id)
@@ -51,7 +56,10 @@ function Game(props) {
         </Row>
             <Row>
               <Link to={"/manage/" + game.id}>Edit Game</Link>
+              <Button onClick={() => setShowFeed(true)}>Test</Button>
             </Row>
+             {showFeed && <MyBackdrop feed={true} show={showFeed} cancelShow={() => setShowFeed(false)}  />}
+      {/*<MyFade in={showFeed} cancelShow={() => setShowFeed(false)}/>*/}
             </Container>}    
      </div>
     

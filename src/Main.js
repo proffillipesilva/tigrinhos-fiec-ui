@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import AppHeader from "./components/AppHeader";
 import { App } from 'konsta/react';
 import Manage from "./views/Manage/Manage";
+import Play from "./views/Play/Play";
 
 function Main() {
 
@@ -21,6 +22,7 @@ function Main() {
         <Route path="/manage" element={<Manage />} />
         <Route path="/manage/:id" element={<Manage />} />
         <Route path="/games/:id" element={<Game />} />
+        <Route path="/play" element={<Play />} />
         <Route path="*" element={<Login />} />
       </Routes>
       
