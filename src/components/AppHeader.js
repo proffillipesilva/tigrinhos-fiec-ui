@@ -13,6 +13,8 @@ function AppHeader() {
           <Nav className="me-auto">
             <Nav.Link ><Link to={"login"}>Login</Link></Nav.Link>
             <Nav.Link ><Link to={"games"}>Games</Link></Nav.Link>
+            <Nav.Link ><Link to={"manage"}>Cria Game</Link></Nav.Link>
+            <Nav.Link ><Link to={"play"}>Play Game</Link></Nav.Link>
             
           </Nav>
         </Navbar.Collapse>

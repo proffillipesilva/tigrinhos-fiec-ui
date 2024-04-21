@@ -1,6 +1,22 @@
 {
-    "games": [
-        { "id": "1", "title": "Jogo 21", "bonus": 100, "image": "https://cdn.dribbble.com/userupload/9472685/file/original-e7ddbedfb40880879ed0bc31ad9cccf2.jpg?resize=400x300" },
-        { "id": "2", "title": "Poker", "bonus": 200, "image": "https://static.vecteezy.com/system/resources/previews/003/126/240/original/poker-game-logo-on-a-green-background-card-game-casino-game-free-vector.jpg" }
-      ]
+  "games": [
+    {
+      "title": "Jogo 21",
+      "bonus": "250",
+      "image": "https://cdn.dribbble.com/userupload/9472685/file/original-e7ddbedfb40880879ed0bc31ad9cccf2.jpg?resize=400x300",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "title": "Poker",
+      "bonus": 200,
+      "image": "https://static.vecteezy.com/system/resources/previews/003/126/240/original/poker-game-logo-on-a-green-background-card-game-casino-game-free-vector.jpg"
+    },
+    {
+      "id": "dde2",
+      "title": "Roleta",
+      "bonus": 350,
+      "image": "https://images.tcdn.com.br/img/img_prod/709207/jogo_cassino_roleta_shot_westpress_567_3_b6339ce0b1695d018bf731fc2ed84cd7.jpg"
+    }
+  ]
 }

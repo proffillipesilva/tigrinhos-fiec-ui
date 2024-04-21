@@ -4,34 +4,51 @@ import { Link } from 'react-router-dom'
 import GameService from '../../services/GameService'
 import { Container, Row, Col } from 'react-bootstrap'
 import GameCard from '../../components/GameCard'
+import MyLoading from '../../components/MyLoading'
 
 function Games(props) {
+
+  const [loading, setloading] = React.useState(false)
 
   const [games, setgames] = React.useState([])
 
   React.useEffect(() => {
+    setloading(true);
+    setTimeout(() => 
     GameService.getAllGames()
-      .then(allGames => setgames(allGames))
+      .then(allGames => {
+        setgames(allGames)
+        setloading(false)
+      })
+      .catch(err => setloading(false))
+    , 2000)
     //.then(setgames)
-  })
+  },[])
 
   return (
     <div>
 
       <Container>
+      <div style={{height: "600px"}}>
+        {loading ? <MyLoading  /> :
+        
       <Row>
         {games && games.map((game, idx) => (
           <Col xl={4} xs={12}>
             <GameCard
               title={game.title}
               image={game.image}
-              idx={idx}
+              idx={game.id}
+              key={idx}
 
             />
             </Col>
           
         ))}
         </Row>
+        
+      }
+      </div>
       </Container>
     </div>
   )
