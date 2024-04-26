@@ -12,34 +12,27 @@ import {
   HashRouter
 } from "react-router-dom";
 
-/*
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Main />,
-    children: [
-      {
-        path: "login",
-        element: <Login />
-      },
-      {
-        path: "games",
-        element: <Games />
-      },
-    ],
-  },
-]);
-*/
+import { applyMiddleware, createStore, compose } from 'redux'
+import { Provider } from 'react-redux';
+import {thunk} from 'redux-thunk'
+import rootReducer from './store/reducer';
+
+const middleware = applyMiddleware(thunk)
+const composedEnhancers = compose(middleware)
+
+const store = createStore(rootReducer, undefined, composedEnhancers )
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
+  <Provider store={store} >
   <React.StrictMode>
     <HashRouter>
     {/*<RouterProvider router={router} /> */}
     <Main />
     </HashRouter>
   </React.StrictMode>
+  </Provider>
 );
 

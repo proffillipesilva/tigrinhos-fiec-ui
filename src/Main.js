@@ -9,13 +9,19 @@ import AppHeader from "./components/AppHeader";
 import { App } from 'konsta/react';
 import Manage from "./views/Manage/Manage";
 import Play from "./views/Play/Play";
+import MyLoading from "./components/MyLoading";
+import { useSelector } from "react-redux";
 
 function Main() {
+
+  const loading = useSelector((state) => state.isLoading)
 
   return (
     <>
     <App theme="material">
     <AppHeader />
+    {loading ? <div style={{height: "600px"}}>
+         <MyLoading  /> </div> :
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/games" element={<Games />} />
@@ -25,6 +31,7 @@ function Main() {
         <Route path="/play" element={<Play />} />
         <Route path="*" element={<Login />} />
       </Routes>
+  }
       
     </App>
     </>
