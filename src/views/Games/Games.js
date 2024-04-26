@@ -5,8 +5,12 @@ import GameService from '../../services/GameService'
 import { Container, Row, Col } from 'react-bootstrap'
 import GameCard from '../../components/GameCard'
 import MyLoading from '../../components/MyLoading'
+import { useSelector } from 'react-redux'
+
 
 function Games(props) {
+
+  const logado = useSelector((state) => state.logado)
 
   const [loading, setloading] = React.useState(false)
 
@@ -27,7 +31,7 @@ function Games(props) {
 
   return (
     <div>
-
+      {logado ?
       <Container>
       <div style={{height: "600px"}}>
         {loading ? <MyLoading  /> :
@@ -50,6 +54,8 @@ function Games(props) {
       }
       </div>
       </Container>
+    : <h1>Favor logar</h1> 
+    }
     </div>
   )
 }
