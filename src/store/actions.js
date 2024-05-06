@@ -34,7 +34,7 @@ export function efetuarLogin(email, password){
     return async (dispatch, getState) => {
         dispatch(fetchDataRequest());
         try {
-          const response = await axiosInstance.post('/login', {email, password});
+          const response = await axiosInstance.post('/auth/login', {email, password});
           localStorage.setItem('token', response.data.token)
           dispatch(loginDataSuccess(response.data));
         } catch (error) {
