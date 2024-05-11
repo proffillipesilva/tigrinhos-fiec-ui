@@ -1,6 +1,6 @@
 {
   "name": "tigrinhos-fiec-ui",
-  "homepage": "http://localhost/build/index.html",
+  "homepage": "/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
