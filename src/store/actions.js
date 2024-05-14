@@ -43,3 +43,18 @@ export function efetuarLogin(email, password){
         dispatch(fetchDataCompleted());
     }
 }
+
+export function efetuarLoginComGoogle(gtoken){
+    
+  return async (dispatch, getState) => {
+      dispatch(fetchDataRequest());
+      try {
+        const response = await axiosInstance.post('/auth/login/google', {gtoken});
+        localStorage.setItem('token', response.data.token)
+        dispatch(loginDataSuccess(response.data));
+      } catch (error) {
+        dispatch(fetchDataFailure(error.message));
+      }
+      dispatch(fetchDataCompleted());
+  }
+}

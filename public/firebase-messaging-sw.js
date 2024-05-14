@@ -1,7 +1,7 @@
 importScripts("https://cdnjs.cloudflare.com/ajax/libs/firebase/10.11.1/firebase-app-compat.min.js");
 importScripts("https://cdnjs.cloudflare.com/ajax/libs/firebase/10.11.1/firebase-messaging-compat.min.js");
 const firebaseConfig = {
-  apiKey: "",
+  apiKey: "AIzaSyDvX35wuBNftMy219zaZJvRzFzohX7MsI4",
   authDomain: "tigrinhos-fiec.firebaseapp.com",
   databaseURL: "https://tigrinhos-fiec-default-rtdb.firebaseio.com",
   projectId: "tigrinhos-fiec",
