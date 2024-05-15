@@ -44,6 +44,7 @@ export function efetuarLogin(email, password){
     }
 }
 
+
 export function efetuarLoginComGoogle(gtoken){
     
   return async (dispatch, getState) => {

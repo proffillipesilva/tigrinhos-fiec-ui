@@ -2,7 +2,8 @@ import { LOGAR, DESLOGAR, LOADING, COMPLETE } from "./actions";
 
 const initialState = {
     logado: false,
-    isLoding: false
+    isLoding: false,
+    userData: {}
 }
 
 export default (state = initialState, action) => {

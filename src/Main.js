@@ -19,6 +19,8 @@ import { myGetToken, onMessageListener } from "./firebase";
 
 function Main() {
 
+  
+
   const [show, setShow] = useState(false);
   const [notification, setNotification] = useState({title: '', body: ''});
   const [isTokenFound, setTokenFound] = useState(false);
@@ -31,11 +33,13 @@ function Main() {
   }).catch(err => console.log('failed: ', err));
 
   const loading = useSelector((state) => state.isLoading)
+  const logado = useSelector((state) => state.logado)
+
 
   return (
     <>
     <App theme="material">
-      <AppHeader />
+      <AppHeader logado={logado} />
     <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide animation style={{
           position: 'absolute',
           top: 20,
@@ -59,13 +63,19 @@ function Main() {
     {loading ? <div style={{height: "600px"}}>
          <MyLoading  /> </div> :
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/games" element={<Games />} />
+       
+        {logado ?
+        <>
         <Route path="/manage" element={<Manage />} />
         <Route path="/manage/:id" element={<Manage />} />
         <Route path="/games/:id" element={<Game />} />
         <Route path="/play" element={<Play />} />
-        <Route path="*" element={<Login />} />
+        <Route path="*" element={<Games />} />
+        </> : 
+        <>
+        <Route path="*" element={<Login />} /> 
+        </>
+        }
       </Routes>
   }
       
