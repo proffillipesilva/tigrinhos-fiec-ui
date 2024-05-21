@@ -14,10 +14,14 @@ import { useSelector } from "react-redux";
 import { Button, Toast } from "react-bootstrap";
 import { getToken } from "firebase/messaging";
 import { myGetToken, onMessageListener } from "./firebase";
+import Account from "./views/Account/Account";
+import Success from "./views/Account/payment/Success";
 
 
 
 function Main() {
+
+  
 
   const [show, setShow] = useState(false);
   const [notification, setNotification] = useState({title: '', body: ''});
@@ -31,11 +35,13 @@ function Main() {
   }).catch(err => console.log('failed: ', err));
 
   const loading = useSelector((state) => state.isLoading)
+  const logado = useSelector((state) => state.logado)
+
 
   return (
     <>
     <App theme="material">
-      <AppHeader />
+      <AppHeader logado={logado} />
     <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide animation style={{
           position: 'absolute',
           top: 20,
@@ -59,13 +65,23 @@ function Main() {
     {loading ? <div style={{height: "600px"}}>
          <MyLoading  /> </div> :
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/games" element={<Games />} />
+       
+        {logado ?
+        <>
         <Route path="/manage" element={<Manage />} />
         <Route path="/manage/:id" element={<Manage />} />
         <Route path="/games/:id" element={<Game />} />
         <Route path="/play" element={<Play />} />
-        <Route path="*" element={<Login />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/success" element={<Success />} />
+
+
+        <Route path="*" element={<Games />} />
+        </> : 
+        <>
+        <Route path="*" element={<Login />} /> 
+        </>
+        }
       </Routes>
   }
       
